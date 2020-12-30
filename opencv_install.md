@@ -9,13 +9,15 @@ the mirror of them are provided by Gitee for Chinese users.\
 
 In case some files fail to download, we download it manually. such as ippicv, boostdesc and vgg and put it into corresponding folders via cmake files\
 ~/opencv/3rdparty/ippicv/ippicv.cmake\
+ln42 change to 'file:/media/zpy/Data2/Ubuntu_support/Ubuntu_support/opencv_4.5.0_install/opencv_download/'
 ~/opencv_contrib/modules/xfeatures2d/cmake/download_boostdesc.cmake\
 ~/opencv_contrib/modules/xfeatures2d/cmake/download_vgg.cmake\
 
 ## Install 
 sudo apt-get install build-essential \
-sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev\
+sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev ffmpeg\
 sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libdc1394-22-dev\
+sudo apt-get install libgstreamer-plugins-base1.0-dev
 sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"\
 sudo apt update\
 sudo apt install libjasper1 libjasper-dev\
@@ -28,14 +30,14 @@ cmake -D WITH_CUDA=ON\
 -D BUILD_opencv_world=ON\
 -D CMAKE_BUILD_TYPE=RELEASE\
 -D OPENCV_ENABLE_NONFREE=ON\
--D OPENCV_EXTRA_MODULES_PATH=/media/zpy/Data2/Ubuntu_support/Ubuntu_support/opencv_4.5.0_install/opencv_contrib/modules\
+-D OPENCV_EXTRA_MODULES_PATH=/home/zpy/opencv_contrib/modules\
 -D BUILD_TIFF=ON\
 -D BUILD_opencv_python2=OFF\
 -D BUILD_EXAMPLES=ON\
 -D PYTHON3_EXCUTABLE=/home/zpy/anaconda3/envs/MGVT/bin/python3.6m\
 -D PYTHON3_INCLUDE_DIR=/home/zpy/anaconda3/envs/MGVT/include/python3.6m\
 -D PYTHON3_LIBRARY=/home/zpy/anaconda3/envs/MGVT/lib/libpython3.6m.a\
--D PYTHON_NUMPY_PATH=/home/zpy/anaconda3/envs/MGVT/lib/python3.6/site-packages ..\
+-D PYTHON_NUMPY_PATH=/home/zpy/anaconda3/envs/MGVT/lib/python3.6/site-packages ..
 
 make -j8 \
 sudo make install \
