@@ -39,25 +39,10 @@ cmake -D WITH_CUDA=ON\
 -D PYTHON3_LIBRARY=/home/zpy/anaconda3/envs/MGVT/lib/libpython3.6m.a\
 -D PYTHON_NUMPY_PATH=/home/zpy/anaconda3/envs/MGVT/lib/python3.6/site-packages ..
 
-cmake -D WITH_CUDA=ON\
--D BUILD_opencv_world=ON\
--D CMAKE_BUILD_TYPE=RELEASE\
--D OPENCV_ENABLE_NONFREE=ON\
--D OPENCV_EXTRA_MODULES_PATH=/home/zpy/opencv_contrib/modules\
--D BUILD_TIFF=ON\
--D BUILD_opencv_python2=OFF\
--D BUILD_opencv_python3=ON\
--D BUILD_EXAMPLES=ON\
--D PYTHON3_EXCUTABLE=/home/zpy/anaconda3/envs/MGVT/bin/python3.6m\
--D PYTHON3_INCLUDE_DIR=/home/zpy/anaconda3/envs/MGVT/include/python3.6m\
--D PYTHON3_LIBRARY=/home/zpy/anaconda3/envs/MGVT/lib/libpython3.6m.a\
--D PYTHON3_NUMPY_INCLUDE_DIRS=/home/zpy/anaconda3/envs/MGVT/lib/python3.6/site-packages/numpy\
--D PYTHON3_PACKAGES_PATH=/home/zpy/anaconda3/envs/MGVT/lib/python3.6/site-packages ..
-
 make -j8 \
 sudo make install \
 
 ##Copy opencv module into anaconda
-sudo cp /usr/local/lib/python3.6/dist-packages/cv2 $your anaconda envs$/lib/python3.6/site-packages\
+sudo cp -r /usr/local/lib/python3.6/dist-packages/cv2 $your anaconda envs$/lib/python3.6/site-packages\
 
 If you have any questions, feel free to contact [[pyzhang@mail.dlut.edu.cn]](pyzhang@mail.dlut.edu.cn)\
